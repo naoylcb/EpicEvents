@@ -41,3 +41,5 @@ Click [here](https://docs.sentry.io/platforms/python/guides/django/) to configur
 ## Database
 
 Import database.sql in your postgresql and adapt information in settings.py (DATABASES)
+
+`psql -U username -d database_name -f database.sql`
