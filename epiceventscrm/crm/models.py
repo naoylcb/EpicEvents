@@ -11,7 +11,8 @@ class Client(models.Model):
     phone = models.CharField(max_length=20)
     mobile = models.CharField(max_length=20)
     company_name = models.CharField(max_length=250)
-    sales_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+    sales_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                      on_delete=models.DO_NOTHING,
                                       validators=[validate_sales_contact])
     existing = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -19,7 +20,8 @@ class Client(models.Model):
 
 
 class Contract(models.Model):
-    sales_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+    sales_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                      on_delete=models.DO_NOTHING,
                                       validators=[validate_sales_contact])
     client = models.ForeignKey(to=Client, on_delete=models.DO_NOTHING)
     status = models.BooleanField(default=False)
@@ -31,7 +33,8 @@ class Contract(models.Model):
 
 class Event(models.Model):
     client = models.ForeignKey(to=Client, on_delete=models.DO_NOTHING)
-    support_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+    support_contact = models.ForeignKey(to=settings.AUTH_USER_MODEL,
+                                        on_delete=models.DO_NOTHING,
                                         validators=[validate_support_contact])
     event_completed = models.BooleanField(default=False)
     attendees = models.IntegerField()

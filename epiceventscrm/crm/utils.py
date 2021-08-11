@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.core.validators import RegexValidator
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -19,12 +18,12 @@ def serialize(serializer, data, obj=None):
 def validate_sales_contact(value):
     contact = get_object_or_404(User, username=value)
     if contact.groups.filter(name='support_team').exists():
-        raise ValidationError((f'{contact} n\'est pas membre de l\'équipe de vente.'),
+        raise ValidationError((f'{contact} n\'est pas dans l\'équipe de vente.'),
                               params={'value': value})
     
 
 def validate_support_contact(value):
     contact = get_object_or_404(User, username=value)
     if contact.groups.filter(name='sales_team').exists():
-        raise ValidationError((f'{contact} n\'est pas membre de l\'équipe de support.'),
+        raise ValidationError((f'{contact} n\'est pas dans l\'équipe de support.'),
                               params={'value': value})
