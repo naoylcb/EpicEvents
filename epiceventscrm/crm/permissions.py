@@ -3,7 +3,7 @@ from rest_framework import permissions
 
 class CanAdd(permissions.BasePermission):
     """
-    Permission to only allow sales team and admins to add an object.
+    Permission to only allow sales team and superuser to add an object.
     """
     def has_permission(self, request, view):        
         if request.method == 'POST':
@@ -15,8 +15,8 @@ class CanAdd(permissions.BasePermission):
 
 class CanEditClientOrContract(permissions.BasePermission):
     """
-    Permission to only allow sales contact and admins to edit a client or a contract.
-    Permission to only allow admins to delete a client or a contract.
+    Permission to only allow sales contact and superuser to edit a client or a contract.
+    Permission to only allow superuser to delete a client or a contract.
     """
     def has_object_permission(self, request, view, obj):        
         if request.method in ['PUT', 'PATCH']:
@@ -30,8 +30,8 @@ class CanEditClientOrContract(permissions.BasePermission):
 
 class CanEditEvent(permissions.BasePermission):
     """
-    Permission to only allow support contact/sales contact of client/admins to edit an event.
-    Permission to only allow admins to delete an event.
+    Permission to only allow support contact/sales contact of client/superuser to edit an event.
+    Permission to only allow superuser to delete an event.
     """
     def has_object_permission(self, request, view, obj):        
         if request.method in ['PUT', 'PATCH']:
