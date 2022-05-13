@@ -1,3 +1,5 @@
+*(Projet réalisé dans le cadre de ma formation chez OpenClassrooms)*
+
 # EpicEvents
 
 This project allows you to access data stored in EpicEvents database through front-end site or API.
