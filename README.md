@@ -1,4 +1,5 @@
-*(Projet réalisé dans le cadre de ma formation chez OpenClassrooms)*
+(Projet réalisé dans le cadre de ma formation)
+(Le but étant de mettre en place une API)
 
 # EpicEvents
 
