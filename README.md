@@ -1,5 +1,5 @@
-(Projet réalisé dans le cadre de ma formation)
-(Le but étant de mettre en place une API)
+(Project realized during my training)  
+(The goal being to set up an API)
 
 # EpicEvents
 
