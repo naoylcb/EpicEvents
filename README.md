@@ -1,5 +1,5 @@
-(Project realized during my training)  
-(The goal being to set up an API)
+*(Project realized during my training)*  
+*(The goal being to set up an API and customize the admin site)*
 
 # EpicEvents
 
