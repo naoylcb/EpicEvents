@@ -1,6 +1,3 @@
-*(Project realized during my training)*  
-*(The goal being to set up an API and customize the admin site)*
-
 # EpicEvents
 
 This project allows you to access data stored in EpicEvents database through front-end site or API.
